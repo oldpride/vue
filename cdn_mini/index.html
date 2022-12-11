@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User Generator</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <!-- type #app in vs code, it auto generate below line -->
+    <div id="app">
+        <!-- default it will load template defined in app.js -->
+    </div>
+
+    <div id="app2">
+        <h1>from app2: Hello {{firstName}}</h1>,
+    </div>
+
+    <div id="app3">
+        <h1>from app3</h1>
+        <img
+          v-bind:src="picture"
+          :alt="`${firstName} ${lastName}`"
+          :class="gender"
+        />
+        <!-- 
+            ':' is the shorthand of 'v-band:'.
+            'picture' and 'gender' are variables in data.
+        -->
+        <h1>{{firstName}} {{lastName}}</h1>
+        <h1>{{gender}}</h1>
+        <h3>Email: {{email}}</h3>
+        <button :class="gender" @click="getUser()">Get Random User</button>
+      </div>
+
+    <!-- 
+        https://vuejs.org/guide/quick-start.html
+        " Here we are using unpkg, but you can also use any CDN that serves npm packages, 
+        for example jsdelivr or cdnjs. Of course, you can also download this file and 
+        serve it yourself.
+
+        When using Vue from a CDN, there is no "build step" involved. This makes the 
+        setup a lot simpler, and is suitable for enhancing static HTML or integrating 
+        with a backend framework. However, you won't be able to use the Single-File 
+        Component (SFC) syntax."
+    -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3.2.45"></script> -->
+    <script src="app.js"></script> 
+    <script src="app2.js"></script>
+    <script src="app3.js"></script>
+</body>
+</html>
