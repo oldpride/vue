@@ -17,6 +17,20 @@ main.js
          src/views/About.vue
 
 ---------------------------------------------------------------------
+how the initial tasks are loaded when we open http://localhost:8080/
+   main.js
+   router/index.js - called by Use(router)
+   src/views/Home.vue
+      created()
+      <Tasks>
+   App.vue  - called by mount('#app')
+   src/components/Header.vue
+   src/components/Footer.vue
+   public/index.html
+
+
+
+---------------------------------------------------------------------
 trace how the clicking-add-Task button event travels
    button clicks
    src/components/Button.vue
