@@ -3,11 +3,18 @@
     @dblclick="$emit('toggle-reminder', task.id)"
     :class="[task.reminder ? 'reminder' : '', 'task']"
   >
+    <!-- 
+      @dblclick="$emit(...)" means, if we catch double-click event, emit it up with
+      'toggle-reminder' event, plus a value of task.id. -tian
+    -->
     <h3>
       {{ task.text }}
       <!-- 
         old way -tian
         <i @click="onDelete(task.id)" class="fas fa-times"></i>
+        onDelete() is defined in methods below.
+        new way, we just emit the event up and the method that handles delete-task
+        event will be implemented in src/views/Home.vue
        -->
       <i @click="$emit('delete-task', task.id)" class="fas fa-times"></i>
       <!-- fas is font-awsome classs imported using CDN in public/index.html -tian -->
@@ -25,7 +32,8 @@ export default {
   // old way -tian
   // methods: {
   //   onDelete(id) {
-  //     this.$emit('delete-task', task.id)
+  //     this.$emit('delete-task', id) 
+  //     // emit up to Tasks.vue because Tasks.vue imports Task.vue
   //   },
   // },
 }

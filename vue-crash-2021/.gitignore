@@ -21,3 +21,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# tmp files. here is for db.json.tmp
+*.tmp
