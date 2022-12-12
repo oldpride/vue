@@ -5,6 +5,11 @@
     @delete-task="deleteTask"
     :tasks="tasks"
   />
+  <!-- 
+    if you see vs code error: The template root requires exactly one element.
+    this error was for Vue2. Vue3 allows multiple elements. 
+    therefore, we can ignore it. -tian
+  -->
 </template>
 
 <script>
@@ -36,10 +41,11 @@ export default {
 
       const data = await res.json()
 
-      this.tasks = [...this.tasks, data]
+      this.tasks = [...this.tasks, data] // using spread syntax to appened array -tian
     },
     async deleteTask(id) {
       if (confirm('Are you sure?')) {
+        // prompt for confirmation -tian
         const res = await fetch(`api/tasks/${id}`, {
           method: 'DELETE',
         })
@@ -52,6 +58,7 @@ export default {
     async toggleReminder(id) {
       const taskToToggle = await this.fetchTask(id)
       const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder }
+      // using spread syntax to add key/vaule -tian
 
       const res = await fetch(`api/tasks/${id}`, {
         method: 'PUT',

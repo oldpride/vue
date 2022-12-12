@@ -7,6 +7,13 @@
       :text="showAddTask ? 'Close' : 'Add Task'"
       :color="showAddTask ? 'red' : 'green'"
     />
+    <!-- 
+      -tian
+      ':' is a abbreviateion for 'v-bind:',
+      in tag, eg, <h1>, the variable is enclosed by {{...}}. example, title.
+      in v-bind, the variable is not enclosed by {{...}}. example, showAddTask.
+      variables are defined in 'export' 'props'.
+    -->
   </header>
 </template>
 

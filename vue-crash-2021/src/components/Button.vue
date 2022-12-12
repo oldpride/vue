@@ -2,6 +2,9 @@
   <button @click="onClick()" :style="{ background: color }" class="btn">
     {{ text }}
   </button>
+  <!-- 
+    @click is the same as v-on:click.
+  -->
 </template>
 
 <script>
@@ -13,6 +16,7 @@ export default {
   },
   methods: {
     onClick() {
+      console.log('click')
       this.$emit('btn-click')
     },
   },

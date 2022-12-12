@@ -1,9 +1,7 @@
 // if we used 
 //    const app = ...
 // it will overwrite the app in app.js
-const app2 = Vue.createApp({
-    
-
+const app2 = Vue.createApp({   
     data() {
         return {
             firstName: 'Tian',

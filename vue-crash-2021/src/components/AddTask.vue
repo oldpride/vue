@@ -3,6 +3,7 @@
     <div class="form-control">
       <label>Task</label>
       <input type="text" v-model="text" name="text" placeholder="Add Task" />
+      <!-- v-model is vue's form input binding -->
     </div>
     <div class="form-control">
       <label>Day & Time</label>
