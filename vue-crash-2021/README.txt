@@ -44,15 +44,15 @@ trace how the clicking-add-Task button event travels
       @toggle-add-task="toggleAddTask"       // catches toggle-add-task, then calls toggleAddTask()
 
 ---------------------------------------------------------------------
-add db.json.tmp into .gitignore.
+add db_tmp.json into .gitignore.
 
 update package.json
-   "backend": "json-server --watch db.json.tmp --port 5000"
+   "backend": "json-server --watch db_tmp.json --port 5000"
 
 we run json server with the tmp file, so that it won't disturb our git.
 
 do the following before starting json-server
-   cp db.json  db.json.tmp
+   cp db.json  db_tmp.json
    npm run backend
 
 
